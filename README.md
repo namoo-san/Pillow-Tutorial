@@ -9,3 +9,13 @@
 ### Python / pip packages
 
 `pip install -r requirements.txt`
+
+## Working directories
+
+### Source files
+
+`./img/*`
+
+### Result files
+
+`./result/*`
