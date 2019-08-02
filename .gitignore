@@ -105,3 +105,4 @@ venv.bak/
 
 # Test image files
 /img/*
+/result/*
