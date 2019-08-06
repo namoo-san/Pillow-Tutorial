@@ -5,6 +5,8 @@ import glob
 import pyocr
 import pyocr.builders
 
+# OCR
+
 tools = pyocr.get_available_tools()
 if len(tools) == 0:
     print("No OCR tool found")

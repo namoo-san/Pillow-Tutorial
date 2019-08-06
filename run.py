@@ -11,15 +11,19 @@ def init ():
         print("OCR tool not found.")
         sys.exit(1)
 
+# Image files convert to grayscale
+
 def convert ():
     lists = glob.glob("./img/*", recursive=True)
     for cv_img in lists:
         print(cv_img)
+        filename = cv_img.replace('img', 'result')
+        print(filename + "convert to grayscale...")
         img = Image.open(cv_img)
-        img.convert('L').save('test.png'),
+        img.convert('L').save(filename)
+        print (filename + "convert successful.")
 
 def ocr ():
-    init
 
     tool = tools[0]
     print("OCR is '%s'" % (tools.get_name()))
@@ -33,6 +37,13 @@ def ocr ():
         )
         print (result)
 
+def main ():
+    # OCR tool initialize
+    init
+    # Image convert to grayscale
+    convert
+    # OCR result images
+    ocr
 
 if __name__ == "__main__" :
-    convert()
+    init

@@ -4,6 +4,8 @@ import glob
 import pyocr
 import pyocr.builders
 
+# Image files convert to grayscale
+
 def convert ():
     lists = glob.glob("./img/*", recursive=True)
     for cv_img in lists:
