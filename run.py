@@ -2,7 +2,6 @@
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 import sys
 import glob
-import cv2
 import pyocr
 import pyocr.builders
 
