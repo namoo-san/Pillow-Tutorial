@@ -1,5 +1,5 @@
 
-from PIL import Image, ImageFilter, ImageDraw, ImageFont
+from PIL import Image, ImageFilter, ImageDraw, ImageFont, ImageOps
 import sys
 import glob
 import pyocr
@@ -14,7 +14,10 @@ def main ():
         filename = cv_img.replace('img', 'result')
         print(filename + " convert to grayscale...")
         img = Image.open(cv_img)
-        img.convert('L').save(filename)
+        grayscale = img.convert('L')
+        twocolor = grayscale.point(lambda x: 0 if x < 230 else x)
+        savefile = twocolor.save(filename)
+        savefile
         print (filename + " convert successful.")
 
     tool = tools[0]
@@ -26,7 +29,7 @@ def main ():
             lang="jpn",
             builder=pyocr.builders.TextBuilder(tesseract_layout=3)
         )
-        print (result)
+        print (result.replace(' ',''))
 
 if __name__ == "__main__" :
     main()
