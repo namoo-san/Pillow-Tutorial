@@ -1,2 +1,4 @@
 pyocr
 pillow
+opencv-contrib-python
+argparse
