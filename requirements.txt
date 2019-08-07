@@ -2,3 +2,4 @@ pyocr
 pillow
 opencv-contrib-python
 argparse
+google-cloud-vision
